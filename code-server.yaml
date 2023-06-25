@@ -16,7 +16,7 @@ services:
       # - DEFAULT_WORKSPACE=/config/workspace #optional
     volumes:
       # config vscode path
-      - /path/to/appdata/config:/config
+      - ~/code-server/config:/config
     ports:
       - 8443:8443
     restart: unless-stopped
