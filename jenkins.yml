@@ -1,0 +1,15 @@
+version: '3'
+services:
+  jenkins:
+    image: jenkins/jenkins:lts
+    restart: always
+    user: root
+    ports:
+      - 8080:8080
+      - 50000:50000
+    environment:
+        NETLIFY_AUTH_TOKEN: uwKG9_MH8cvd209qTrCY97wlImfEPAMtTHsE_DnlX34
+    container_name: jenkins
+    volumes:
+      - $HOME/dockerfiles/jenkins_compose/jenkins_configuration:/var/jenkins_home
+      - /var/run/docker.sock:/var/run/docker.sock
