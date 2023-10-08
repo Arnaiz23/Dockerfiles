@@ -1,0 +1,16 @@
+version: '3.0'
+services:
+  filebrowser:
+    image: hurlenko/filebrowser
+    container_name: filebrowser
+    environment:
+      - UID=1000
+      - GID=1000
+      - TZ=Europe/Madrid
+      - FB_BASEURL=/filebrowser
+    ports:
+      - "8080:8080"
+    volumes:
+      - /media/hard_drive/physique/:/data
+      # - ./filebrowser/fb-config:/config
+    restart: unless-stopped
